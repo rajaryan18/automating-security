@@ -3,7 +3,7 @@ import json
 from dotenv import load_dotenv
 import os
 
-# from humanDetection import HumanDetection, HumanDetectionConfig
+from models.humanDetection import HumanDetection, HumanDetectionConfig
 
 def send_message(data, headers=None):
     if headers is None:
@@ -12,9 +12,10 @@ def send_message(data, headers=None):
 
 def main():
     load_dotenv('../.env')
-    # human_detection_config = HumanDetectionConfig(yolo_pretrained_file="yolov8n.pt", video_stream=0)
-    # human_detection = HumanDetection(human_detection_config=human_detection_config)
-    # human_detection.run()
+    human_detection_config = HumanDetectionConfig(yolo_pretrained_file="./models/utils/yolov8n.pt", video_stream=0)
+    human_detection = HumanDetection(human_detection_config=human_detection_config)
+    human_detection.run()
+    print("Done")
 
 if __name__ == "__main__":
     main()
