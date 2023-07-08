@@ -2,6 +2,7 @@ import requests
 import json
 from dotenv import load_dotenv
 import os
+import threading
 
 from models.humanDetection import HumanDetection, HumanDetectionConfig
 
