@@ -14,7 +14,7 @@ contract User is Storage {
         uint256[] store;
     }
 
-    // username => User mapping
+    // username => Device mapping
     mapping(string => Devices) private user_devices;
     uint256 private totalDevices = 0;
     function initializer(uint256 _id, string memory _name) public {
@@ -31,6 +31,7 @@ contract User is Storage {
         device.device_name = _name;
         device.id = totalDevices;
         device.device_endpoint = _device_endpoint;
+        devices.push(totalDevices);
         totalDevices++;
         return device.id;
     }
