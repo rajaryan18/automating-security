@@ -3,5 +3,6 @@ WORKDIR C:\Docs\Python\automating-security\backend
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 5000
+RUN npx hardhat run --network sepolia scripts/deploy.js
+EXPOSE 3500
 CMD ["npm", "start"]

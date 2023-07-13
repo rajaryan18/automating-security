@@ -2,6 +2,7 @@
     All models to be added to ./models/
     Any pretrained model files should be added to ./models/utils/
 '''
+import requests
 # Imports models here
 from models.humanDetection import HumanDetection, HumanDetectionConfig
 
@@ -46,3 +47,12 @@ def check_alarm():
     for key, value in models:
         ret_dict[key] = value.is_alarm()
     return ret_dict
+
+def alarm_monitor(url):
+    '''
+    Continously Monitors all Models for any alarms.
+        Args: 
+            url : URL to send updates to
+    '''
+    while True:
+        requests.get(url)

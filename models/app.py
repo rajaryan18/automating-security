@@ -2,8 +2,10 @@ from flask import Flask
 from dotenv import load_dotenv
 import os
 import time
+import requests
+from multiprocessing import Process
 
-from entry import loader, run_model, check_alarm, models, model_config, model_endpoint
+from entry import loader, run_model, check_alarm, alarm_monitor, models, model_config, model_endpoint
 
 app = Flask(__name__)
 
@@ -34,9 +36,12 @@ def alarm():
                 'time' : time.time(),
                 'upload_url' : model_config[key].upload_url
             })
-    return ret
+    requests.post(f"{os.environ['URL']}:{os.environ['NODE_PORT']}/alarm", data=ret)
 
 if __name__ == '__main__':
     load_dotenv('.env')
     loader()
-    app.run(host=os.environ['URL'], port=os.environ['PORT'], debug=True)
+    process = Process(target=alarm_monitor, args=(f"{os.environ['URL']}:{os.environ['MODEL_PORT']}"))
+    process.start()
+    app.run(host=os.environ['URL'], port=os.environ['MODEL_PORT'], debug=True)
+    process.join()

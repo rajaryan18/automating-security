@@ -9,7 +9,7 @@ contract Storage {
     }
 
     mapping(uint256 => StorageElement) private storage_mapping;
-    uint256 totalStorage = 0;
+    uint256 public totalStorage;
 
     function add_storage(string memory _event_id, uint256 _time, string memory _desc) internal returns(uint256) {
         StorageElement storage st = storage_mapping[totalStorage];

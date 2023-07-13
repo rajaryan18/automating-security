@@ -1,0 +1,501 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "contracts/Storage.sol:Storage": {
+        "src": "contracts\\Storage.sol:4",
+        "version": {
+          "withMetadata": "c9a34b1b72f90f1ea67c148509f3a5835aa36ad70587cb385e7efe34618e1a98",
+          "withoutMetadata": "bab847c6abbb723c3383c15b4b94455e6945e31dc629a3555d38aa0f2b08b141",
+          "linkedWithoutMetadata": "bab847c6abbb723c3383c15b4b94455e6945e31dc629a3555d38aa0f2b08b141"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "storage_mapping",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_uint256,t_struct(StorageElement)8_storage)",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:11"
+            },
+            {
+              "label": "totalStorage",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:12"
+            }
+          ],
+          "types": {
+            "t_mapping(t_uint256,t_struct(StorageElement)8_storage)": {
+              "label": "mapping(uint256 => struct Storage.StorageElement)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(StorageElement)8_storage": {
+              "label": "struct Storage.StorageElement",
+              "members": [
+                {
+                  "label": "event_id",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/User.sol:User": {
+        "src": "contracts\\User.sol:5",
+        "version": {
+          "withMetadata": "c8aa7be731c0a579f138d2d346fbba30d68ccf005172a37c5e10aab40cdf0392",
+          "withoutMetadata": "db3b10c0772a0a0239239f6297aa9f6c441c13f28978bcd5095622f8eaf55d59",
+          "linkedWithoutMetadata": "db3b10c0772a0a0239239f6297aa9f6c441c13f28978bcd5095622f8eaf55d59"
+        },
+        "inherit": [
+          "contracts/Storage.sol:Storage"
+        ],
+        "libraries": [],
+        "methods": [
+          "initializer(uint256,string)",
+          "new_device(string,string,string)",
+          "add_new_storage(string,string,uint256,string)",
+          "get_all_devices()",
+          "get_device_by_username(string)",
+          "get_all_stores(string)",
+          "get_store_by_id(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "storage_mapping",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_uint256,t_struct(StorageElement)8_storage)",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:11"
+            },
+            {
+              "label": "totalStorage",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:12"
+            },
+            {
+              "label": "id",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "User",
+              "src": "contracts\\User.sol:6"
+            },
+            {
+              "label": "name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "User",
+              "src": "contracts\\User.sol:7"
+            },
+            {
+              "label": "devices",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "User",
+              "src": "contracts\\User.sol:8"
+            },
+            {
+              "label": "user_devices",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Devices)102_storage)",
+              "contract": "User",
+              "src": "contracts\\User.sol:18"
+            },
+            {
+              "label": "totalDevices",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_uint256",
+              "contract": "User",
+              "src": "contracts\\User.sol:19"
+            }
+          ],
+          "types": {
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Devices)102_storage)": {
+              "label": "mapping(string => struct User.Devices)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(StorageElement)8_storage)": {
+              "label": "mapping(uint256 => struct Storage.StorageElement)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Devices)102_storage": {
+              "label": "struct User.Devices",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "device_name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "device_endpoint",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "store",
+                  "type": "t_array(t_uint256)dyn_storage",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(StorageElement)8_storage": {
+              "label": "struct Storage.StorageElement",
+              "members": [
+                {
+                  "label": "event_id",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.0"
+      }
+    },
+    {
+      "contracts/Storage.sol:Storage": {
+        "src": "contracts\\Storage.sol:4",
+        "version": {
+          "withMetadata": "e0a8ca607ebc42cec792bcbc12cb034a7972fe2c981a2ba1d0b98d253aee7f38",
+          "withoutMetadata": "e33f3caa2e0ff165a5b9361ab6031c4675f0311bf967c40320c46e5cb0ac249d",
+          "linkedWithoutMetadata": "e33f3caa2e0ff165a5b9361ab6031c4675f0311bf967c40320c46e5cb0ac249d"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalStorage",
+            "src": "contracts\\Storage.sol:12"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "storage_mapping",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_uint256,t_struct(StorageElement)8_storage)",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:11"
+            },
+            {
+              "label": "totalStorage",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:12"
+            }
+          ],
+          "types": {
+            "t_mapping(t_uint256,t_struct(StorageElement)8_storage)": {
+              "label": "mapping(uint256 => struct Storage.StorageElement)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(StorageElement)8_storage": {
+              "label": "struct Storage.StorageElement",
+              "members": [
+                {
+                  "label": "event_id",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.0"
+      },
+      "contracts/User.sol:User": {
+        "src": "contracts\\User.sol:5",
+        "version": {
+          "withMetadata": "e9cba84bcbd73f8af819caf06827112bfe3e4315310093305e01d28a4f4c5af5",
+          "withoutMetadata": "fe423130755511b7a3f3fca17dc0905ea7e47216f947211d584dd056574b29f1",
+          "linkedWithoutMetadata": "fe423130755511b7a3f3fca17dc0905ea7e47216f947211d584dd056574b29f1"
+        },
+        "inherit": [
+          "contracts/Storage.sol:Storage"
+        ],
+        "libraries": [],
+        "methods": [
+          "initializer(uint256,string)",
+          "new_device(string,string,string)",
+          "add_new_storage(string,string,uint256,string)",
+          "get_all_devices()",
+          "get_device_by_username(string)",
+          "get_all_stores(string)",
+          "get_store_by_id(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "state-variable-assignment",
+            "name": "totalDevices",
+            "src": "contracts\\User.sol:19"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "storage_mapping",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_mapping(t_uint256,t_struct(StorageElement)8_storage)",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:11"
+            },
+            {
+              "label": "totalStorage",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "Storage",
+              "src": "contracts\\Storage.sol:12"
+            },
+            {
+              "label": "id",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "User",
+              "src": "contracts\\User.sol:6"
+            },
+            {
+              "label": "name",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_string_storage",
+              "contract": "User",
+              "src": "contracts\\User.sol:7"
+            },
+            {
+              "label": "devices",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_array(t_uint256)dyn_storage",
+              "contract": "User",
+              "src": "contracts\\User.sol:8"
+            },
+            {
+              "label": "user_devices",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_mapping(t_string_memory_ptr,t_struct(Devices)103_storage)",
+              "contract": "User",
+              "src": "contracts\\User.sol:18"
+            },
+            {
+              "label": "totalDevices",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_uint256",
+              "contract": "User",
+              "src": "contracts\\User.sol:19"
+            }
+          ],
+          "types": {
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_string_memory_ptr,t_struct(Devices)103_storage)": {
+              "label": "mapping(string => struct User.Devices)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(StorageElement)8_storage)": {
+              "label": "mapping(uint256 => struct Storage.StorageElement)",
+              "numberOfBytes": "32"
+            },
+            "t_string_memory_ptr": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Devices)103_storage": {
+              "label": "struct User.Devices",
+              "members": [
+                {
+                  "label": "id",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "device_name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "device_endpoint",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "store",
+                  "type": "t_array(t_uint256)dyn_storage",
+                  "offset": 0,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_struct(StorageElement)8_storage": {
+              "label": "struct Storage.StorageElement",
+              "members": [
+                {
+                  "label": "event_id",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "time",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "description",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "2"
+                }
+              ],
+              "numberOfBytes": "96"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        },
+        "solcVersion": "0.8.0"
+      }
+    }
+  ]
+}

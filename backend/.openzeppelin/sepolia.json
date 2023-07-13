@@ -1,0 +1,186 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x768a96Cb671d6dE0b64651e121051bA3431BAc0E",
+    "txHash": "0xe4660820e345bb4a1681b15d92739a8eb20a430d34bf3a3ffa5aea54139695d1"
+  },
+  "proxies": [
+    {
+      "address": "0xeAe8f9aa446561D2418f80411673d4Ad3C0Afe57",
+      "txHash": "0x26ba9ed282c6183c03afb0f3b0ae1742fb76b08705c17544fc4ed30b374ade52",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x246b5D29A32D934400a0c89c41d69a87f50B66e6",
+      "txHash": "0x42511b470987041763501532bc1fcece633230d8fde772d232f528b8af5c833b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xBB40Cb663eb30C4b2e20F9CFA291AecF2621c25b",
+      "txHash": "0x1cbe68e4e429b3fcd8ed94c37597f9f606f920a460bb9b4637daba5a3fde3384",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x7E8d528B5a87bA7Ac35dC481775Fe3E879ee0a0D",
+      "txHash": "0x7ded6b832cb0fa8f31c5815d32cbfd5caa2054829af273a9bbeafda3cbabfb1b",
+      "kind": "transparent"
+    },
+    {
+      "address": "0xb5e73a2ce9b3565e5d7e165F72643f29B6b2C5f7",
+      "txHash": "0x6c97628e8e62cd443166e5fd10035a2b5f9c2aab1a9207fc3f94cba0d80288fe",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x53d9224fC0e3E5617F3CddCFD872C109C33121Ca",
+      "txHash": "0xa69c3720e37bac8660b0cfdba08700bd4368bfa1ebc1829ea7510a8ab1f16cae",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "db3b10c0772a0a0239239f6297aa9f6c441c13f28978bcd5095622f8eaf55d59": {
+      "address": "0xFC5D8Acb698a291EF8D6426b7a92c2BD91095f73",
+      "txHash": "0x1fb25670a4bac8646b246a665d59fcfe0a906ff79a93e798bf8577eb028209b2",
+      "layout": {
+        "solcVersion": "0.8.0",
+        "storage": [
+          {
+            "label": "storage_mapping",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_uint256,t_struct(StorageElement)8_storage)",
+            "contract": "Storage",
+            "src": "contracts\\Storage.sol:11"
+          },
+          {
+            "label": "totalStorage",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "Storage",
+            "src": "contracts\\Storage.sol:12"
+          },
+          {
+            "label": "id",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "User",
+            "src": "contracts\\User.sol:6"
+          },
+          {
+            "label": "name",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_string_storage",
+            "contract": "User",
+            "src": "contracts\\User.sol:7"
+          },
+          {
+            "label": "devices",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_array(t_uint256)dyn_storage",
+            "contract": "User",
+            "src": "contracts\\User.sol:8"
+          },
+          {
+            "label": "user_devices",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_string_memory_ptr,t_struct(Devices)102_storage)",
+            "contract": "User",
+            "src": "contracts\\User.sol:18"
+          },
+          {
+            "label": "totalDevices",
+            "offset": 0,
+            "slot": "6",
+            "type": "t_uint256",
+            "contract": "User",
+            "src": "contracts\\User.sol:19"
+          }
+        ],
+        "types": {
+          "t_array(t_uint256)dyn_storage": {
+            "label": "uint256[]",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_struct(Devices)102_storage)": {
+            "label": "mapping(string => struct User.Devices)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(StorageElement)8_storage)": {
+            "label": "mapping(uint256 => struct Storage.StorageElement)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Devices)102_storage": {
+            "label": "struct User.Devices",
+            "members": [
+              {
+                "label": "id",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "device_name",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "device_endpoint",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "store",
+                "type": "t_array(t_uint256)dyn_storage",
+                "offset": 0,
+                "slot": "3"
+              }
+            ],
+            "numberOfBytes": "128"
+          },
+          "t_struct(StorageElement)8_storage": {
+            "label": "struct Storage.StorageElement",
+            "members": [
+              {
+                "label": "event_id",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "time",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "description",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "2"
+              }
+            ],
+            "numberOfBytes": "96"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        }
+      }
+    }
+  }
+}
